@@ -10,16 +10,16 @@
 
 <body>
     <script>
-        const string = prompt('Enter a sentence: ');
-        const words = string.split(' ');
 
-        words.sort();
-
-        console.log('The sorted words are:');
-
-        for (const element of words) {
-            console.log(element);
+        var a = prompt("Enter a value");
+        var b, sum = 0;
+        var z = a;
+        while (a > 0) {
+            b = a % 10;
+            sum = sum * 10 + b;
+            a = parseInt(a / 10);
         }
+        alert(sum);
     </script>
 </body>
 
