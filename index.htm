@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Q3.</h1>
+    <h2 id="demo"></h2>
+    <script>
+        const random_hex_color_code = () => {
+            let n = (Math.random() * 0xfffff * 1000000).toString(16);
+            return '#' + n.slice(0, 6);
+        };
+
+        Color = (random_hex_color_code())
+        document.getElementById("demo").innerHTML = Color;
+        document.body.style.backgroundColor = Color;
+    </script>
+</body>
+
+</html>
