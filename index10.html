@@ -9,13 +9,42 @@
 </head>
 
 <body>
+
+    <input type="text" id="input" size="50">
+    <button id="button">submit</button>
+
     <script>
-        let myArr = [3, 7, 4, 8, 6, 1, 5, 2, 9];
-        console.log(myArr);
+        function findSecondMaxMin() {
+            var str = input.value.replace(/\s{2,}/g, ' ');
+            var originalArr = input.value.split(',');
+            var arr = input.value.split(',');
 
-        console.log("2nd Small", myArr.sort()[1]);
-        console.log("2nd High", myArr.sort()[myArr.length - 2]);
+            var max = Math.max.apply(Math, arr);
+            var min = Math.min.apply(Math, arr);
 
+            for (var i = arr.length; i--;) {
+                if (arr.length > 2 && arr[i] == max) {
+                    arr.splice(i, 1);
+                    console.log(arr);
+                    break;
+                }
+            }
+            for (var i = arr.length; i--;) {
+                if (arr.length > 2 && arr[i] == min) {
+                    arr.splice(i, 1);
+                    console.log(arr);
+                    break;
+                }
+            }
+
+            max = Math.max.apply(Math, arr);
+            console.log(max);
+            min = Math.min.apply(Math, arr);
+            console.log(min);
+            input.value = 'Second max:' + max + ', ' + 'Second min:' + min + ' Initial array:' + originalArr;
+        }
+
+        button.addEventListener("click", findSecondMaxMin);
     </script>
 </body>
 
