@@ -10,14 +10,19 @@
 
 <body>
     <script>
-        const capitalized = function (sentence) {
-            let str = sentence.split(" ");
-            for (let i = 0; i < str.length; i++) {
-                str[i] = (str[i][0].toUpperCase() + str[i].substring(1));
-            }
-            return str.join(" ");
+        const minute = 1000 * 60;
+        const hour = minute * 60;
+        const day = hour * 24;
+        const year = day * 365;
+
+        var date_diff_indays = function (date1, date2) {
+            dt1 = new Date(date1);
+            dt2 = new Date(date2);
+            return Math.floor((Date.UTC(dt2.getFullYear(), dt2.getMonth(), dt2.getDate()) -
+                Date.UTC(dt1.getFullYear(), dt1.getMonth(), dt1.getDate())) / day);
         }
-        console.log(capitalized("the quick brown fox"))
+        document.write(date_diff_indays('04/02/2014', '11/04/2014') + '<br />');
+        document.write(date_diff_indays('12/02/2014', '11/04/2014'));
     </script>
 </body>
 
