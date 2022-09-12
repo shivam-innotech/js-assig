@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <p>Length of the object is:<span class="output"></span></p>
+    <button onclick="getObjectLength()"> Get object length</button>
+
+    <script>
+        function getObjectLength() {
+            exampleObject = { id: 1, name: 'Arun', age: 30 }
+            objectLenght = Object.keys(exampleObject).length;
+            document.querySelector('.output').textContent = objectLenght;
+        }
+    </script>
+</body>
+
+</html>
